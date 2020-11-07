@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>二柒十肆</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Nothing is something worse or better than everything.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="二柒十肆">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="二柒十肆">
+<meta property="og:description" content="Nothing is something worse or better than everything.">
+<meta property="og:locale">
+<meta property="article:author" content="Liu-Da">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="二柒十肆" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">二柒十肆</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Leetcode/004. Median of Two Sorted Arrays" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/26/Leetcode/004.%20Median%20of%20Two%20Sorted%20Arrays/" class="article-date">
+  <time datetime="2018-11-25T16:00:00.000Z" itemprop="datePublished">2018-11-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/26/Leetcode/004.%20Median%20of%20Two%20Sorted%20Arrays/">004. Median of Two Sorted Arrays</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Median-of-Two-Sorted-Arrays"><a href="#Median-of-Two-Sorted-Arrays" class="headerlink" title="Median of Two Sorted Arrays"></a>Median of Two Sorted Arrays</h1><p><strong>Py3 - Solution</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMedianSortedArrays</span>(<span class="params">self, nums1, nums2</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums1: List[int]</span></span><br><span class="line"><span class="string">        :type nums2: List[int]</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        nums = nums1+nums2</span><br><span class="line">        nums.sort()</span><br><span class="line">        mid = <span class="built_in">len</span>(nums)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> (nums[mid]+nums[~mid])/<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>时间复杂度：</strong>  $O(log(m + n))$<br><strong>思路:</strong></p>
+<ul>
+<li><p>将两数组连接快排</p>
+</li>
+<li><p>然后求有序数组的中位数（取反法) 原理 $x + \sim x = -1$ </p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mid = <span class="built_in">len</span>(l)//<span class="number">2</span></span><br><span class="line">Median = l[mid]+l[~mid])/<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/Median.png" alt="Median"></p>
+</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/piperck/p/5829867.html"><strong>关于~操作</strong></a><br>取反3等于-4，3的二进制用8bit表示为 0000 0011 对这个数进行二进制取反得到 1111 1100。计算机普遍使用补码表示负数。知道一个数的补码 要求其值的方法是 首先看符号位也就是最左的一位，如果是1代表是负数(-)如果是0代码是正数(+)，然后对该值取反+1得到其源码。<br>1111 1100 取反 0000 0011 ＋ 1 ＝ 0000 0100 加上符号- 0000 0100 = -4</p>
+</blockquote>
+<blockquote>
+<p>取反-4等于3，-4的表示是使用了4的补码 也就是 0000 0100 的补码 1111 1100 表示，在计算机存储中这个数表示-4。然后我们取-4的反码，也就是取 1111 1100 的反码 1111 1100 取反 0000 0011 结果等于3。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/11/26/Leetcode/004.%20Median%20of%20Two%20Sorted%20Arrays/" data-id="ckh81q3a8001a2sc766x27e45" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Interesting/x" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/28/Interesting/x/" class="article-date">
+  <time datetime="2018-08-27T16:00:00.000Z" itemprop="datePublished">2018-08-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interesting/">Interesting</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/28/Interesting/x/">X</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="X"><a href="#X" class="headerlink" title="X"></a>X</h1><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1321859457&auto=1&height=66"></iframe>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/08/28/Interesting/x/" data-id="ckh81q39r00082sc71ggx4sdb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/x/" rel="tag">x</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Interesting/wxpy 远程后台运行" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/20/Interesting/wxpy%20%E8%BF%9C%E7%A8%8B%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/" class="article-date">
+  <time datetime="2018-07-20T07:12:15.000Z" itemprop="datePublished">2018-07-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interesting/">Interesting</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/20/Interesting/wxpy%20%E8%BF%9C%E7%A8%8B%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/">wxpy 远程后台运行</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="wxpy-远程后台运行"><a href="#wxpy-远程后台运行" class="headerlink" title="wxpy 远程后台运行"></a>wxpy 远程后台运行</h1><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>ssh 登录了远程的<code>Linux</code>服务器，运行运行<code>wxpy</code>，关闭ssh连接的时候程序会自动终止。<br>原因是当用户注销（logout）或者网络断开时，终端会收到 HUP（hangup）信号从而关闭其所有子进程。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup python x.py &amp;</span><br></pre></td></tr></table></figure>
+
+<p><code>nohup</code>命令是让进程忽略 HUP 信号，<code>&amp;</code>命令是让进程在后台运行。<br>所有的输出会保存到<code>nohup.output</code>文件中。</p>
+<h3 id="终止"><a href="#终止" class="headerlink" title="终止"></a>终止</h3><ul>
+<li><p>得到进程<code>ID</code></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep x.py | grep -v grep | awk &#x27;&#123;print $2&#125;&#x27;</span><br></pre></td></tr></table></figure></li>
+<li><p><code>Kill</code> 进程</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9  进程ID</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/07/20/Interesting/wxpy%20%E8%BF%9C%E7%A8%8B%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/" data-id="ckh81q39q00072sc7g0y27ftl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wxpy/" rel="tag">wxpy</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Interesting/Emoji" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/19/Interesting/Emoji/" class="article-date">
+  <time datetime="2018-07-18T20:58:15.000Z" itemprop="datePublished">2018-07-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interesting/">Interesting</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/19/Interesting/Emoji/">Emoji</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h1><center> [Emoji 编码 复制 查找](https://emojipedia.org/) </center>
+![屏幕快照 2018-07-19 21.09.18 -c](/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-19%2021.09.18.png)
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/07/19/Interesting/Emoji/" data-id="ckh81q39l00032sc74s21cs7v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Emoji/" rel="tag">Emoji</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Interesting/Markdown 居中" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/19/Interesting/Markdown%20%E5%B1%85%E4%B8%AD/" class="article-date">
+  <time datetime="2018-07-18T20:58:15.000Z" itemprop="datePublished">2018-07-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interesting/">Interesting</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/19/Interesting/Markdown%20%E5%B1%85%E4%B8%AD/">Markdown 居中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Markdown-居中"><a href="#Markdown-居中" class="headerlink" title="Markdown 居中"></a>Markdown 居中</h1><p><strong>居中</strong>： </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>这一行需要居中<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>效果</strong>：</p>
+<center>这一行需要居中</center>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/07/19/Interesting/Markdown%20%E5%B1%85%E4%B8%AD/" data-id="ckh81q39p00062sc7c162121y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Interesting/迅雷历史版本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/19/Interesting/%E8%BF%85%E9%9B%B7%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/" class="article-date">
+  <time datetime="2018-07-18T20:58:15.000Z" itemprop="datePublished">2018-07-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interesting/">Interesting</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/19/Interesting/%E8%BF%85%E9%9B%B7%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/">迅雷历史版本</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="迅雷历史版本"><a href="#迅雷历史版本" class="headerlink" title="迅雷历史版本"></a>迅雷历史版本</h1><p>使用老版本迅雷解决<code>应版权方要求</code>… <a target="_blank" rel="noopener" href="http://mac.xunlei.com/history_version.html">🤔</a><br><img src="/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-19%2021.01.58.png" alt="迅雷"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/07/19/Interesting/%E8%BF%85%E9%9B%B7%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/" data-id="ckh81q39u000d2sc7fmwld7ge" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BF%85%E9%9B%B7/" rel="tag">迅雷</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Interesting/算法效率" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/12/Interesting/%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87/" class="article-date">
+  <time datetime="2018-07-11T16:00:00.000Z" itemprop="datePublished">2018-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interesting/">Interesting</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/12/Interesting/%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87/">算法效率</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="算法效率"><a href="#算法效率" class="headerlink" title="算法效率"></a>算法效率</h2><ul>
+<li><strong>时间复杂度</strong>：评估执行程序所需的时间。可以估算出程序对处理器的使用程度。 </li>
+<li><strong>空间复杂度</strong>：评估执行程序所需的存储空间。可以估算出程序对计算机内存的使用程度。</li>
+</ul>
+<blockquote>
+<p>设计算法时，一般是要先考虑系统环境，然后权衡时间复杂度和空间复杂度，选取一个平衡点。不过，时间复杂度要比空间复杂度更容易产生问题，因此算法研究的主要也是时间复杂度，不特别说明的情况下，复杂度就是指时间复杂度。</p>
+</blockquote>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><ul>
+<li><strong>时间频度</strong>：一个算法中的语句执行次数称为语句频度或时间频度。记为$T(n)$。</li>
+<li><strong>时间复杂度</strong>：前面提到的时间频度$T(n)$中，$n$称为问题的规模，当$n$不断变化时，时间频度$T(n)$也会不断变化。但有时我们想知道它变化时呈现什么规律，为此我们引入时间复杂度的概念。一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用$T(n)$表示，若有某个辅助函数$f(n)$，使得当n趋近于无穷大时，$T（n)/f(n)$的极限值为不等于零的常数，则称$f(n)$是$T(n)$的同数量级函数，记作$T(n)=O(f(n))$，它称为算法的渐进时间复杂度，简称<strong>时间复杂度</strong>。</li>
+</ul>
+<blockquote>
+<p>算法复杂度可以从最理想情况、平均情况和最坏情况三个角度来评估，由于<strong>平均情况大多和最坏情况持平</strong>，而且评估最坏情况也可以避免后顾之忧，因此一般情况下，我们<strong>设计算法时都要直接估算最坏情况的复杂度</strong>。</p>
+</blockquote>
+<ul>
+<li><strong>O阶</strong>：    </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">$O(1)$</th>
+<th align="center">$O(N)$</th>
+<th align="center">$O(logN)$</th>
+<th align="center">$O(N^2)$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">常数阶</td>
+<td align="center">线性阶</td>
+<td align="center">对数阶</td>
+<td align="center">平方阶</td>
+</tr>
+</tbody></table>
+<h2 id="计算原则"><a href="#计算原则" class="headerlink" title="计算原则"></a>计算原则</h2><ol>
+<li><strong>用常数1来取代运行时间中所有加法常数。</strong></li>
+<li><strong>修改后的运行次数函数中，只保留最高阶项。</strong></li>
+<li><strong>如果最高阶项存在且不是1，则去除与这个项相乘的常数。</strong></li>
+<li><strong>对于条件判断语句，总的时间复杂度等于其中 时间复杂度最大的路径 的时间复杂度。</strong></li>
+<li><strong>对于顺序执行的语句或者算法，总的时间复杂度等于其中最大的时间复杂度。</strong></li>
+<li><strong>常称此为 大O推导法。</strong></li>
+</ol>
+<h2 id="求时间复杂度"><a href="#求时间复杂度" class="headerlink" title="求时间复杂度"></a>求时间复杂度</h2><blockquote>
+<p>转自<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4cca5ce055a">raymondCaptain</a>  强烈建议阅读原文 帮助很大  </p>
+</blockquote>
+<p><strong>一. 基础题</strong><br>求该方法的时间复杂度</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">aFunc</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Hello World\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考答案：<br>当 i = 0 时，内循环执行 n 次运算，当 i = 1 时，内循环执行 n - 1 次运算……当 i = n - 1 时，内循环执行 1 次运算。<br>所以，执行次数 $T(n) = n + (n - 1) + (n - 2)……+ 1 = n(n + 1) / 2 = n^2 / 2 + n / 2$。<br>根据上文说的 大O推导法 可以知道，此时时间复杂度为 $O(n^2)$。</p>
+<p><strong>二. 进阶题</strong><br>求该方法的时间复杂度</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">aFunc</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">        i *= <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%i\n&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考答案：<br>假设循环次数为 t，则循环条件满足 $2^t &lt; n$。<br>可以得出，执行次数$t = log_2n$，即 $T(n) = log_2n$，可见时间复杂度为 $O(log_2n)$，即 $O(logn)$。</p>
+<p><strong>三. 再次进阶</strong><br>求该方法的时间复杂度</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">aFunc</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> aFunc(n - <span class="number">1</span>) + aFunc(n - <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考答案：<br>显然运行次数，$T(0) = T(1) = 1$，同时 $T(n) = T(n - 1) + T(n - 2) + 1$，这里的 1 是其中的加法算一次执行。<br>显然 $T(n) = T(n - 1) + T(n - 2)$ 是一个斐波那契数列，通过归纳证明法可以证明，当 $n &gt;= 1$ 时 $T(n) &lt; (5/3)^n$，同时当 $n &gt; 4$ 时 $T(n) &gt;= (3/2)^n$。<br>所以该方法的时间复杂度可以表示为 $O((5/3)^n)$，简化后为 $O(2^n)$。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/07/12/Interesting/%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87/" data-id="ckh81q39t000c2sc7furb6ptt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Leetcode/003. Longest Substring Without Repeating Characters" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/12/Leetcode/003.%20Longest%20Substring%20Without%20Repeating%20Characters/" class="article-date">
+  <time datetime="2018-07-11T16:00:00.000Z" itemprop="datePublished">2018-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/12/Leetcode/003.%20Longest%20Substring%20Without%20Repeating%20Characters/">003. Longest Substring Without Repeating Characters</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Longest-Substring-Without-Repeating"><a href="#Longest-Substring-Without-Repeating" class="headerlink" title="Longest Substring Without Repeating"></a>Longest Substring Without Repeating</h1><p><strong>Py3 - Solution</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span>(<span class="params">self, s</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        list_s = <span class="built_in">list</span>(s)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">set</span>(list_s)),<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(s)-i+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(<span class="built_in">list</span>(s[j:j+i]))) == i:</span><br><span class="line">                    <span class="keyword">return</span> i</span><br><span class="line">                    </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span>(<span class="params">self, s</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        finded = &#123;&#125;</span><br><span class="line">        start = <span class="number">0</span></span><br><span class="line">        max_length = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">            <span class="keyword">if</span> s[i] <span class="keyword">in</span> finded <span class="keyword">and</span> finded[s[i]] &gt;= start:</span><br><span class="line">                start = finded[s[i]]+<span class="number">1</span>  </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> i - start + <span class="number">1</span> &gt; max_length:</span><br><span class="line">                    max_length = i - start + <span class="number">1</span></span><br><span class="line">            finded[s[i]] = i</span><br><span class="line">        <span class="keyword">return</span> max_length   </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/">解决方案</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/07/12/Leetcode/003.%20Longest%20Substring%20Without%20Repeating%20Characters/" data-id="ckh81q3a700192sc7hbx015kh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="false-cv" class="article article-type-false" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/09/cv/" class="article-date">
+  <time datetime="2018-07-08T16:00:00.000Z" itemprop="datePublished">2018-07-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CV/">CV</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/09/cv/">CV</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+<div>
+  <link rel="stylesheet" type="text/css" href="https://www.visualcv.com/less/standard?%40header-font=pt_serif&amp;%40body-font=open_sans&amp;%40body-font-size=18px&amp;%40section-margins=3.05em&amp;%40article-margins=1.5em" />
+  <div class="cv-container animated fadeIn ">
+    <div class="cv-content single-column">
+      <section data-bind="sections" id="profile" class="profile">
+        <article class="vcard " data-bind="content">
+          <div class="fn user-title">
+            <h1 class="full-name" data-bind="full_name">
+              <span class="undefined needsclick" contenteditable="false" data-placeholder="Full name">刘达</span>
+            </h1>
+            <h2 class="title" data-bind="headline">
+              <span class="undefined needsclick" contenteditable="false" data-placeholder="Headline / current title">男 23岁</span>
+              <br>
+              <span class="undefined needsclick" contenteditable="false" data-placeholder="Headline / current title">liuda0112@gmail.com</span>
+            </h2>
+          </div>
+        </article>
+      </section>
+      <section data-bind="sections" id="degrees" class="dated_story">
+        <header>
+          <h3 class="header-text" data-bind="label">
+                  <span class="undefined needsclick" contenteditable="false" data-placeholder="Education">教育经历</span>
+                </h3>
+        </header>
+        <article data-bind="contents" class="">
+          <div class="article-headings">
+            <h6 class="date-range">
+                    <span data-bind="start_date">
+                      <span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2017-09-01</span>
+                    </span>
+                    <span data-bind="end_date">
+                      <span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2018-08-30</span>
+                    </span>
+                  </h6>
+          </div>
+          <div class="article-body">
+            <h4 data-bind="title">
+                    <span class="undefined needsclick" contenteditable="false" data-placeholder="Degree name">人工智能 硕士</span>
+                  </h4>
+            <div data-bind="organization_url" target="_blank" rel="nofollow">
+              <h5 data-bind="organization">
+                      <span class="undefined needsclick" contenteditable="false" data-placeholder="School name">爱丁堡大学</span>
+                    </h5>
+            </div>
+            <div id="react-tinymce-1176626" class=" mce-content-body" spellcheck="true" placeholder="Description">
+              <p>
+                <span>GPA（3.5/4）</span>
+              </p>
+              <p>
+                <span>
+                        <span>
+                          <span>主要课程: 机器学习和模式识别、机器学习实践、强化学习、加速自然语言处理、自然语言理解、语音和语言处理的计算机编程、自动语音识别。</span>
+                </span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </article>
+        <article data-bind="contents" class="">
+          <div class="article-headings">
+            <h6 class="date-range">
+                    <span data-bind="start_date">
+                      <span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2013-09-30 </span>
+                    </span>
+                    <span data-bind="end_date">
+                      <span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2017-06-20</span>
+                    </span>
+                  </h6>
+          </div>
+          <div class="article-body">
+            <h4 data-bind="title"><span class="undefined needsclick" contenteditable="false" data-placeholder="Degree name">计算机科学与技术 学士</span></h4>
+            <div data-bind="organization_url" target="_blank" rel="nofollow">
+              <h5 data-bind="organization"><span class="undefined needsclick" contenteditable="false" data-placeholder="School name">河北工业大学</span></h5></div>
+            <div id="react-tinymce-1176628" class=" mce-content-body" spellcheck="true" placeholder="Description">
+              <p><span>GPA（3.2/4）</span></p>
+              <p><span><span><span>主要课程: C 语言、C++、数据结构、离散数学、汇编语言、编译原理、人工智能、系统安全、 计算机原理、线性 代数、概率论等。</span></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section data-bind="sections" id="text_story" class="text_story">
+        <header>
+          <h3 class="header-text" data-bind="label"><span class="undefined needsclick" contenteditable="false" data-placeholder="Text section">个人亮点</span></h3></header>
+        <article data-bind="content" class="">
+          <div id="react-tinymce-1176630" class=" mce-content-body" spellcheck="true" placeholder="Description">
+            <p>思维活跃、知识面广、热衷于互联网行业。 自学能力强、能快速的接受新的技术，以最快的 速度形成生产力。</p>
+          </div>
+        </article>
+      </section>
+      <section data-bind="sections" id="text_story_jzSytJCPT" class="text_story">
+        <header>
+          <h3 class="header-text" data-bind="label"><span class="undefined needsclick" contenteditable="false" data-placeholder="Text section">专业技能</span></h3></header>
+        <article data-bind="content" class="">
+          <div id="react-tinymce-1176632" class=" mce-content-body" spellcheck="true" placeholder="Description">
+            <p>机器学习、自然语言处理、Python、Keras、Linux、服务器等。</p>
+          </div>
+        </article>
+      </section>
+      <section data-bind="sections" id="dated_stories" class="dated_story">
+        <header>
+          <h3 class="header-text" data-bind="label"><span class="undefined needsclick" contenteditable="false" data-placeholder="Custom dated section">项目经历</span></h3></header>
+        <article data-bind="contents" class="">
+          <div class="article-headings">
+            <h6 class="date-range"><span data-bind="start_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2018-06 </span></span><span data-bind="end_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">至今</span></span></h6></div>
+          <div class="article-body">
+            <h4 data-bind="title"><span class="undefined needsclick" contenteditable="false" data-placeholder="Title">基于Attention的神经网络推荐系统</span></h4>
+            <div data-bind="organization_url" target="_blank" rel="nofollow">
+              <h5 data-bind="organization"><span class="undefined needsclick" contenteditable="false" data-placeholder="Organization">独立完成</span></h5></div>
+            <div id="react-tinymce-1176634" class=" mce-content-body" spellcheck="true" placeholder="Description">
+              <p><span>使用2017年Google在《Attention is all you need》中提出的Attention模型构建神经网络推荐系统。在MovieLens数据集上进行序列化建模。</span></p>
+            </div>
+          </div>
+        </article>
+        <article data-bind="contents" class="">
+          <div class="article-headings">
+            <h6 class="date-range"><span data-bind="start_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2018-03</span></span><span data-bind="end_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2018-03</span></span></h6></div>
+          <div class="article-body">
+            <h4 data-bind="title"><span class="undefined needsclick" contenteditable="false" data-placeholder="Title">RNN语言建模</span></h4>
+            <div data-bind="organization_url" target="_blank" rel="nofollow">
+              <h5 data-bind="organization"><span class="undefined needsclick" contenteditable="false" data-placeholder="Organization">独立完成</span></h5></div>
+            <div id="react-tinymce-1176636" class=" mce-content-body" spellcheck="true" placeholder="Description">
+              <p><span>使用循环神经网络进行语言建模（RNN、LSTM）。语料库：parsed English Wikipedia corpus</span></p>
+            </div>
+          </div>
+        </article>
+        <article data-bind="contents" class="">
+          <div class="article-headings">
+            <h6 class="date-range"><span data-bind="start_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2017-11</span></span><span data-bind="end_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2017-11</span></span></h6></div>
+          <div class="article-body">
+            <h4 data-bind="title"><span class="undefined needsclick" contenteditable="false" data-placeholder="Title">手写字符识别</span></h4>
+            <div data-bind="organization_url" target="_blank" rel="nofollow">
+              <h5 data-bind="organization"><span class="undefined needsclick" contenteditable="false" data-placeholder="Organization">独立完成</span></h5></div>
+            <div id="react-tinymce-1176638" class=" mce-content-body" spellcheck="true" placeholder="Description">
+              <p><span>分别使用DNN、CNN在MNIST数据集进行手写字符识别。使用Python实现forward以及backword逻辑。探究不同的激活函数、优化方法、权值初始化、正则方法的影响。</span></p>
+            </div>
+          </div>
+        </article>
+        <article data-bind="contents" class="">
+          <div class="article-headings">
+            <h6 class="date-range"><span data-bind="start_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2017-05</span></span><span data-bind="end_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2017-06</span></span></h6></div>
+          <div class="article-body">
+            <h4 data-bind="title"><span class="undefined needsclick" contenteditable="false" data-placeholder="Title">跨平台即时通讯软件</span></h4>
+            <div data-bind="organization_url" target="_blank" rel="nofollow">
+              <h5 data-bind="organization"><span class="undefined needsclick" contenteditable="false" data-placeholder="Organization">负责除GUI以外的逻辑代码</span></h5></div>
+            <div id="react-tinymce-1176640" class=" mce-content-body" spellcheck="true" placeholder="Description">
+              <p><span>实现用户账户管理系统 实现多用户群聊 Python + Pyqt 实现跨平台（Windows、Mac、Linux） OpenCV+Pyaudio实现视频通话 Socket编程数据传输 接入图灵机器人接口实现智能回复。</span></p>
+            </div>
+          </div>
+        </article>
+        <article data-bind="contents" class="">
+          <div class="article-headings">
+            <h6 class="date-range"><span data-bind="start_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2016-05</span></span><span data-bind="end_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2016-06</span></span></h6></div>
+          <div class="article-body">
+            <h4 data-bind="title"><span class="undefined needsclick" contenteditable="false" data-placeholder="Title">模拟火车购票网站</span></h4>
+            <div data-bind="organization_url" target="_blank" rel="nofollow">
+              <h5 data-bind="organization"><span class="undefined needsclick" contenteditable="false" data-placeholder="Organization">除虚拟化外的代码实现</span></h5></div>
+            <div id="react-tinymce-1176642" class=" mce-content-body" spellcheck="true" placeholder="Description">
+              <p><span>基于LAMP（Linux、Apache、MySQL、PHP）架构; 网站前后端分离，数据库服务器只提供restful接口，增加安全性; Ajax技术不必刷新界面提供更好的用户体验; Exsi虚拟化实现服务器热备（HA）； 实现余票算法、利用广度优先搜索算法实现最少车站算法。</span></p>
+            </div>
+          </div>
+        </article>
+        <article data-bind="contents" class="">
+          <div class="article-headings">
+            <h6 class="date-range"><span data-bind="start_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2015-05</span></span><span data-bind="end_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2015-06</span></span></h6></div>
+          <div class="article-body">
+            <h4 data-bind="title"><span class="undefined needsclick" contenteditable="false" data-placeholder="Title">类Minecraft 3D游戏</span></h4>
+            <div data-bind="organization_url" target="_blank" rel="nofollow">
+              <h5 data-bind="organization"><span class="undefined needsclick" contenteditable="false" data-placeholder="Organization">独立完成</span></h5></div>
+            <div id="react-tinymce-1176644" class=" mce-content-body" spellcheck="true" placeholder="Description">
+              <p><span>使用Unity3D绘制世界 第一人称视角控制角色 多种实体实现(正方体、球体、锥体等) 重力设置、失重模式 双语界面、游戏进度储存等。</span></p>
+            </div>
+          </div>
+        </article>
+        <article data-bind="contents" class="">
+          <div class="article-headings">
+            <h6 class="date-range"><span data-bind="start_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2014-05</span></span><span data-bind="end_date"><span class="undefined needsclick" contenteditable="false" data-placeholder="YYYY">2014-06</span></span></h6></div>
+          <div class="article-body">
+            <h4 data-bind="title"><span class="undefined needsclick" contenteditable="false" data-placeholder="Title">2D 打砖块游戏</span></h4>
+            <div data-bind="organization_url" target="_blank" rel="nofollow">
+              <h5 data-bind="organization"><span class="undefined needsclick" contenteditable="false" data-placeholder="Organization">独立完成</span></h5></div>
+            <div id="react-tinymce-1176646" class=" mce-content-body" spellcheck="true" placeholder="Description">
+              <p><span>构建基于Windows平台下的GUI打砖块游戏; 使用C语言、EGE图形库； 3种难度级别设置、8种各式道具; 加入球板之间的摩擦力算法使游戏更加逼真; 本地储存游戏设置，方便的更换BGM以及砖块布局。</span></p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section data-bind="sections" id="text_story_P8rdMYopLP" class="text_story">
+        <header>
+          <h3 class="header-text" data-bind="label"><span class="undefined needsclick" contenteditable="false" data-placeholder="Text section">应聘职位</span></h3></header>
+        <article data-bind="content" class="">
+          <div id="react-tinymce-1176648" class=" mce-content-body" spellcheck="true" placeholder="Description">
+            <p>技术研究 - 机器学习方向</p>
+            <p><span>技术研究 - 自然语言处理方向&nbsp;</span></p>
+          </div>
+        </article>
+      </section>
+      <div data-bind="add-section-btn"><span class="undefined needsclick" contenteditable="false" data-placeholder="add-section-btn"></span></div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/07/09/cv/" data-id="ckh81q39h00012sc700dq6xpp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CV/" rel="tag">CV</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Leetcode/002. Add Two Numbers" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/26/Leetcode/002.%20Add%20Two%20Numbers/" class="article-date">
+  <time datetime="2018-06-25T16:00:00.000Z" itemprop="datePublished">2018-06-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/26/Leetcode/002.%20Add%20Two%20Numbers/">002. Add Two Numbers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Add-Two-Numbers"><a href="#Add-Two-Numbers" class="headerlink" title="Add Two Numbers"></a>Add Two Numbers</h1><p><strong>Py3 - Solution</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addTwoNumbers</span>(<span class="params">self, l1, l2</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type l1: ListNode</span></span><br><span class="line"><span class="string">        :type l2: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        dummyHead = p = ListNode(<span class="number">0</span>) <span class="comment"># dummyHead为哑节点</span></span><br><span class="line">        carry = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">or</span> l2 <span class="keyword">or</span> carry:</span><br><span class="line">            <span class="keyword">if</span> l1:</span><br><span class="line">                carry += l1.val</span><br><span class="line">                l1 = l1.<span class="built_in">next</span></span><br><span class="line">            <span class="keyword">if</span> l2:</span><br><span class="line">                carry += l2.val</span><br><span class="line">                l2 = l2.<span class="built_in">next</span></span><br><span class="line">            carry, val = <span class="built_in">divmod</span>(carry, <span class="number">10</span>)</span><br><span class="line">            p.<span class="built_in">next</span> = p = ListNode(val)</span><br><span class="line">        <span class="keyword">return</span> dummyHead.<span class="built_in">next</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/06/26/Leetcode/002.%20Add%20Two%20Numbers/" data-id="ckh81q39w000h2sc79vp9bsv7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CV/">CV</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interesting/">Interesting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Leetcode/">Leetcode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shadowsocks/">Shadowsocks</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emoji/" rel="tag">Emoji</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shadowsocks/" rel="tag">Shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wxpy/" rel="tag">wxpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/x/" rel="tag">x</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%85%E9%9B%B7/" rel="tag">迅雷</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CV/" style="font-size: 10px;">CV</a> <a href="/tags/Emoji/" style="font-size: 10px;">Emoji</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/wxpy/" style="font-size: 10px;">wxpy</a> <a href="/tags/x/" style="font-size: 10px;">x</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%BF%85%E9%9B%B7/" style="font-size: 10px;">迅雷</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/26/Leetcode/004.%20Median%20of%20Two%20Sorted%20Arrays/">004. Median of Two Sorted Arrays</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/28/Interesting/x/">X</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/20/Interesting/wxpy%20%E8%BF%9C%E7%A8%8B%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/">wxpy 远程后台运行</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/19/Interesting/Emoji/">Emoji</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/19/Interesting/Markdown%20%E5%B1%85%E4%B8%AD/">Markdown 居中</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Liu-Da<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
